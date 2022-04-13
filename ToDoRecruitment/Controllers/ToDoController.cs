@@ -9,10 +9,14 @@ namespace ToDoRecruitment.Controllers
     [ApiController]
     public class ToDoController : ControllerBase
     {
-        private readonly IToDoRepository _toDoRepository;
+        // Alle method should incjection with IToDoService. I ran out of time.
 
-        public ToDoController(IToDoRepository toDoRepository)
+        private readonly IToDoRepository _toDoRepository;
+        private readonly IToDoService _toDoService;
+
+        public ToDoController(IToDoService toDoService, IToDoRepository toDoRepository)
         {
+            _toDoService = toDoService;
             _toDoRepository = toDoRepository;
         }
 
@@ -39,7 +43,7 @@ namespace ToDoRecruitment.Controllers
         [HttpGet("{title}")]
         public ActionResult<GetToDoDto> GetByTitleToDo(string title)
         {
-            var toDoGet = _toDoRepository.GetByTitleToDo(title);
+            var toDoGet = _toDoService.GetByTitleToDo(title);
 
             if (toDoGet == null)
             {
@@ -60,7 +64,12 @@ namespace ToDoRecruitment.Controllers
         public ActionResult AddToDo(AddToDoDto dto)
         {
             var todo = new ToDoModel { Title = dto.Title, Description = dto.Description, PercentComplete = dto.PercentComplete, IsCompleted = dto.IsCompleted };
-             _toDoRepository.AddToDo(todo);
+            var result=_toDoService.AddToDo(todo);
+
+            if(result.OperationResultType == Core.OperationResults.OperationResultType.Conflict)
+            {
+                return Conflict(result.ErrorMessage);
+            }
             return Ok();
         }
 

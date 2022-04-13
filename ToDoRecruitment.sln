@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoRecruitment.Core", "ToD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoRecruitment.Api", "ToDoRecruitment.Api\ToDoRecruitment.Api.csproj", "{84F1978C-03E7-4D51-84A3-FC09B9F6A104}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoRecruitment.Tests", "ToDoRecruitment.Tests\ToDoRecruitment.Tests.csproj", "{803A3270-B0A4-4D8C-986C-74D187E2AC67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{84F1978C-03E7-4D51-84A3-FC09B9F6A104}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84F1978C-03E7-4D51-84A3-FC09B9F6A104}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84F1978C-03E7-4D51-84A3-FC09B9F6A104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{803A3270-B0A4-4D8C-986C-74D187E2AC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{803A3270-B0A4-4D8C-986C-74D187E2AC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{803A3270-B0A4-4D8C-986C-74D187E2AC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{803A3270-B0A4-4D8C-986C-74D187E2AC67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

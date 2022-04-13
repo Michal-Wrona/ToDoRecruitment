@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ToDoDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
+builder.Services.AddScoped<IToDoService,ToDoService>();
 
 
 var app = builder.Build();
